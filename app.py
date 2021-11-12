@@ -7,7 +7,7 @@ latest = ""
 
 @app.route("/", methods=["GET"])
 def home():
-    latest = request.args
+    latest += str(request.args)
     return "Hello, World!" + str(latest)
 
 
