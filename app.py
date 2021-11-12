@@ -2,11 +2,13 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+latest = ""
+
 
 @app.route("/", methods=["GET"])
 def home():
-    print(request.args)
-    return "Hello, World!" + str(request.args)
+    latest = request.args
+    return "Hello, World!" + str(latest)
 
 
 if __name__ == "__main__":
